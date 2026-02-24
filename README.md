@@ -70,13 +70,9 @@ src/
 ├── main.tsx            # React entry point
 ├── index.css           # Global styles (Tailwind)
 ├── types/
-│   └── font.ts         # TypeScript interfaces
+├── font.ts         # TypeScript interfaces
 ├── content/
-│   └── content.ts      # Content script for font detection
+├── content.ts      # Content script for font detection
 └── background/
     └── background.ts   # Background service worker
 ```
-
-## License
-
-MIT

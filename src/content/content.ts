@@ -1,10 +1,8 @@
 import type { FontInfo, FontMessage } from "../types/font";
 
-// Function to extract fonts from all elements
 function extractFonts(): FontInfo[] {
   const fontMap = new Map<string, FontInfo>();
 
-  // Get all visible elements
   const elements = document.querySelectorAll("*");
 
   elements.forEach((element) => {
@@ -17,7 +15,6 @@ function extractFonts(): FontInfo[] {
 
     if (!fontFamily) return;
 
-    // Create a unique key for this font combination
     const key = `${fontFamily}-${fontWeight}-${fontStyle}-${fontSize}`;
 
     if (fontMap.has(key)) {
@@ -38,11 +35,9 @@ function extractFonts(): FontInfo[] {
     }
   });
 
-  // Convert map to array and sort by count
   return Array.from(fontMap.values()).sort((a, b) => b.count - a.count);
 }
 
-// Listen for messages from popup
 chrome.runtime.onMessage.addListener(
   (
     message: FontMessage,

@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="w-[400px] h-[600px] bg-white dark:bg-gray-900">
-      {/* Header */}
+      
       <div className="bg-black dark:bg-gray-950 p-6 text-white">
         <h1 className="text-2xl font-bold mb-2">Font Reader</h1>
         <p className="text-gray-300 dark:text-gray-400 text-sm">
@@ -55,9 +55,8 @@ function App() {
         </p>
       </div>
 
-      {/* Content */}
       <div className="p-4">
-        {/* Scan Button */}
+        
         <button
           onClick={scanFonts}
           disabled={loading}
@@ -67,14 +66,12 @@ function App() {
           {loading ? 'Scanning...' : 'Scan Page'}
         </button>
 
-        {/* Error Message */}
         {error && (
           <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 p-3 rounded-lg mb-4 text-sm">
             {error}
           </div>
         )}
 
-        {/* Fonts List */}
         <div className="space-y-2 max-h-[440px] overflow-y-auto">
           {fonts.length === 0 && !loading && !error && (
             <div className="text-center text-gray-500 dark:text-gray-400 py-12">
